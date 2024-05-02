@@ -1,19 +1,13 @@
-create or replace procedure squares(a in out int) 
+create or replace procedure squarenum(num in out number) is
 begin
-    a:=a*a;
+	num:=num*num;
 end;
 /
 set serveroutput on;
 declare
-	limit int:=&limit;
-	r int;
-	i int;
+	num number:=&num;
 begin
-	for i in 1 .. limit
-	loop
-		r:=squares(i);
-		dbms_output.put_line('square of ' || i || 'is' || r);
-	end loop;
+	squarenum(num);
+	dbms_output.put_line('square  is ' || num);
 end;
 /
-

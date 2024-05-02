@@ -1,4 +1,4 @@
-set serveroutput on
+set serveroutput on;
 create or replace  function addnum(a in number,b in number)
 return number is
 	s number;
